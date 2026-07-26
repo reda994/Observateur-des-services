@@ -1,0 +1,54 @@
+# ============================================
+# OBSERVATEUR-DES-SERVICES - .gitignore
+# ============================================
+
+# =====================
+# BACKEND (Spring Boot)
+# =====================
+backend/target/
+backend/*.db
+backend/logs/
+backend/application.properties
+backend/healthcheck.db
+backend/*.log
+
+# =====================
+# FRONTEND (React)
+# =====================
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/coverage/
+
+# =====================
+# SECRETS
+# =====================
+.env
+.env.local
+*.secret
+
+# =====================
+# IDE
+# =====================
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# =====================
+# OS
+# =====================
+Thumbs.db
+.DS_Store
+*.log
+
+# =====================
+# DOCKER
+# =====================
+*.pid
+docker-compose.override.yml

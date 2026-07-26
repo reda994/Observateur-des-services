@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: observateur-backend
+    ports:
+      - "8080:8080"
+    environment:
+      # Pass environment variables (secrets) from the host or .env file
+      - JWT_SECRET=${JWT_SECRET}
+      - SMTP_USERNAME=${SMTP_USERNAME}
+      - SMTP_PASSWORD=${SMTP_PASSWORD}
+      - SPRING_PROFILES_ACTIVE=docker
+    volumes:
+      - ./backend/healthcheck.db:/app/healthcheck.db  # persist SQLite DB
+      - ./backend/logs:/app/logs                     # persist logs
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: observateur-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

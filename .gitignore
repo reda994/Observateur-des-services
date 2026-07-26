@@ -1,0 +1,18 @@
+# Backend
+backend/target/
+backend/*.db
+backend/logs/
+backend/application.properties
+
+# Frontend
+frontend/node_modules/
+frontend/build/
+frontend/.env
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Docker
+*.log
