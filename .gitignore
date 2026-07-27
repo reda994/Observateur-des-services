@@ -16,3 +16,4 @@ frontend/.env
 
 # Docker
 *.log
+.env
