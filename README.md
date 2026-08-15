@@ -622,3 +622,41 @@ Le projet sera validé lorsque :
 # Licence
 
 Projet interne.
+
+Guide d'exécution – HealthCheck Monitor (Copier-coller)
+🚀 1. Cloner le projet
+bash
+git clone https://github.com/reda994/Observateur-des-services.git
+cd Observateur-des-services
+🔐 2. Configurer les secrets
+Créer le fichier .env :
+
+bash
+echo "JWT_SECRET=ta_clé_jwt_ici" > .env
+echo "SMTP_USERNAME=ton_email@gmail.com" >> .env
+echo "SMTP_PASSWORD=ton_mot_de_passe_app" >> .env
+🖥️ 3. Lancer en local
+Backend
+bash
+cd backend
+mvn clean install -DskipTests
+mvn spring-boot:run
+Frontend (nouveau terminal)
+bash
+cd frontend
+npm install
+npm start
+🐳 4. Lancer avec Docker
+bash
+docker-compose up -d --build
+🌐 5. Accès
+Frontend : http://localhost:3000
+
+Backend : http://localhost:8080
+
+Swagger : http://localhost:8080/swagger-ui.html
+
+🔐 6. Connexion
+Username : admin
+
+Password : admin123
